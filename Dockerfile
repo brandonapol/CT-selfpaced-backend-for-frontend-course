@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt 
 RUN python -m venv venv 
+RUN apk add build-base
 RUN venv/bin/pip install -r requirements.txt 
 RUN pip3 install -r requirements.txt
 
