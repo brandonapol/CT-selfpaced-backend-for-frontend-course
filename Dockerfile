@@ -21,4 +21,4 @@ EXPOSE 5000
 
 RUN ./boot.sh
 
-CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
