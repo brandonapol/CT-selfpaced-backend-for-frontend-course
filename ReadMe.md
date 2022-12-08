@@ -12,20 +12,20 @@ If you're familiar with Docker, the Dockerfile includes commands to get the app 
 and can be executed with docker commands. Otherwise:
 
 ### In your terminal, type:
-1. python3 -m venv venv 
+1. `python3 -m venv venv`
 This is like Python's version of setting up NPM.
 2. If you're on Mac:
-Type: source venv/bin/activate
+Type: `source venv/bin/activate`
 3. If you're on Windows:
-Type: venv\Scripts\activate
-4. pip3 install -r requirements.txt
+Type: `venv\Scripts\activate`
+4. `pip3 install -r requirements.txt`
 This is using NPM to install every dependency in the requirements.txt folder. There's some extra stuff in there
 so it's fairly large, be sure to be on steady wifi to install it.
-5. Type: flask run
+5. Type: `flask run`
 This should work, but if it tells you it doesn't know where the Flask app is (it will complain about FLASK_APP= or similar),
 then type 
-- FLASK_APP=app
-- FLASK_ENV=development
+- `FLASK_APP=app`
+- `FLASK_ENV=development`
 You'll also need to connect to the database here, which will be in Google Classroom.
 
 ## Using the database
