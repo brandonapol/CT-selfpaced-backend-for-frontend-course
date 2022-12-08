@@ -8,6 +8,10 @@ api = Blueprint('api',__name__, url_prefix='/api')
 def getdata():
     return {'yee': 'naw'}
 
+@api.route('/')
+def home():
+    return "<h3>Congrats</h3>"
+
 @api.route('/contacts', methods = ['POST'])
 def create_contact():
     name = request.json['name']
