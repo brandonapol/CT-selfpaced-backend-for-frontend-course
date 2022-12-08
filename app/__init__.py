@@ -18,3 +18,4 @@ app.config.from_object(Config)
 root_db.init_app(app)
 ma.init_app(app)
 migrate = Migrate(app, root_db)
+

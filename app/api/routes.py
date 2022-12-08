@@ -1,4 +1,6 @@
 from flask import Blueprint, request, jsonify
+import datetime
+from ..db_clear import hard_code_clear, repopulate
 
 from models import db, Contact, contact_schema, contacts_schema
 
@@ -6,7 +8,7 @@ api = Blueprint('api',__name__, url_prefix='/api')
 
 @api.route('/getdata')
 def getdata():
-    return {'yee': 'naw'}
+    return {'yee': 'haw'}
 
 @api.route('/')
 def home():
@@ -31,6 +33,7 @@ def create_contact():
 def get_contact():
     contacts = Contact.query.all()
     response = contacts_schema.dump(contacts)
+    # print(response)
     return jsonify(response)
 
 @api.route('/contacts/<id>', methods = ['GET'])
@@ -61,3 +64,10 @@ def delete_contact(id):
     db.session.commit()
     response = contact_schema.dump(contact)
     return jsonify(response)
+
+@api.route('/clear')
+def clear():
+    hard_code_clear()
+    repopulate()
+    return "done"
+
