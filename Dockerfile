@@ -17,6 +17,9 @@ COPY helpers.py helpers.py
 COPY boot.sh boot.sh 
 RUN chmod +x boot.sh 
 
+ENV FLASK_APP=app
+ENV FLASK_ENV=development
+
 EXPOSE 5000
 
 RUN ./boot.sh
