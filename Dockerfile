@@ -8,9 +8,6 @@ COPY config.py config.py
 COPY models.py models.py
 COPY forms.py forms.py
 COPY helpers.py helpers.py
-
-# Copy build files
-COPY requirements.txt requirements.txt
 COPY boot.sh boot.sh 
 RUN chmod +x boot.sh
 
@@ -28,6 +25,7 @@ RUN python -m venv venv
 # Correct
 RUN . ./boot.sh
 # Can now install packages inside the virtual environment
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 ENV FLASK_APP=app
@@ -35,4 +33,4 @@ ENV FLASK_ENV=development
 
 EXPOSE 5000
 
-CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
+CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
