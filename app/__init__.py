@@ -11,6 +11,10 @@ from helpers import JSONEncoder
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    return "<p>home</p>"
+
 app.register_blueprint(api)
 
 app.json_encoder = JSONEncoder
