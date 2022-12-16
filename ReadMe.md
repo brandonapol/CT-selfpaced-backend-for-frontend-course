@@ -14,14 +14,17 @@ and can be executed with docker commands. Otherwise:
 ### In your terminal, type:
 1. `python3 -m venv venv`
 This is like Python's version of setting up NPM.
-2. If you're on Mac:
-Type: `source venv/bin/activate`
-3. If you're on Windows:
+1. If you're on Mac:
+Type: `source ./venv/bin/activate`
+1. If you're on Windows:
 Type: `venv\Scripts\activate`
-4. `pip3 install -r requirements.txt`
-This is using NPM to install every dependency in the requirements.txt folder. There's some extra stuff in there
+1. If you're on Linux:
+Type: `source ./venv/bin/activate`
+(if `source` is not available, instead type: `. ./venv/bin/activate`)
+1. `pip3 install -r requirements.txt`
+This is like using NPM to install every dependency in the requirements.txt folder. There's some extra stuff in there
 so it's fairly large, be sure to be on steady wifi to install it.
-5. Type: `flask run`
+1. Type: `flask run`
 This should work, but if it tells you it doesn't know where the Flask app is (it will complain about FLASK_APP= or similar),
 then type 
 - `FLASK_APP=app`
